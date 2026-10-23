@@ -10,16 +10,6 @@
    ],
    "keyHash": "0647b534253b9fa0cf234d392ea6c72a360c18bac88d7bea30458fd71031523c",
    "owner": true
-  },
-  {
-   "name": "Treinadores - séries",
-   "role": "treinador",
-   "aps": [
-    "TRA",
-    "DMT",
-    "TUM"
-   ],
-   "keyHash": "5f2712775b37dbf69d7da9b90ec5b8aeacaa868e029b686fddf7620a5a96ff78"
   }
  ]
 }
