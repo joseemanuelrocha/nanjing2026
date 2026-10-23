@@ -20,6 +20,16 @@
     "TUM"
    ],
    "keyHash": "2b34a2a2084ac0cc574116cdbda059266a3cdb51f862b15b9c1ef30b79ca0132"
+  },
+  {
+   "name": "Gestão",
+   "role": "gestao",
+   "aps": [
+    "TRA",
+    "DMT",
+    "TUM"
+   ],
+   "keyHash": "24d41fb6b56bc30202e04623116d079e28cc5a9ccd4a2b0d9b2a49ee0b1afcc4"
   }
  ]
 }
