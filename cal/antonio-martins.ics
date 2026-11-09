@@ -332,38 +332,6 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-0-16:40@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T084000Z
-DTEND:20261112T092000Z
-SUMMARY:Aquecimento · Trampolim individual · 11–12 · Masculino · Qualifica
- ção · Grupo 1
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 16:40–17:20.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Masculino · Quali
- ficação · Grupo 1 – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-1-17:20@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T084000Z
-DTEND:20261112T092000Z
-SUMMARY:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualificaç
- ão · Grupo 2
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 16:40–17:20.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualif
- icação · Grupo 2 – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:competition-0-Competição-12-0-17:30@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261112T093000Z
