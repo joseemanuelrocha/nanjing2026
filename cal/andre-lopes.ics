@@ -1,0 +1,84 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Portugal Nanjing 2026//PT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Nanjing 2026 – Andre Lopes
+X-WR-TIMEZONE:Asia/Shanghai
+REFRESH-INTERVAL;VALUE=DURATION:PT1H
+X-PUBLISHED-TTL:PT1H
+BEGIN:VEVENT
+UID:d4d0aa12-41db-4dda-924a-d02276bb115d@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261109T120000Z
+DTEND:20261109T140000Z
+SUMMARY:Jantar · Jantar de boas vindas
+LOCATION:restaurante do Crowne Plaza Yangtze River Boat Nanjing
+DESCRIPTION:Hora de Nanjing: 20:00–22:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Jantar · Jantar de boas vindas – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Aquecimento-14-0-19:25@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T112500Z
+DTEND:20261114T120000Z
+SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Final
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 19:25–20:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Fin
+ al – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Competição-14-0-20:10@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T121000Z
+DTEND:20261114T124500Z
+SUMMARY:Competição · Trampolim sincronizado · 17–21 · Masculino · Final
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 20:10–20:45.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Masculino · Fina
+ l – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-2-Aquecimento-15-0-10:50@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261115T025000Z
+DTEND:20261115T032000Z
+SUMMARY:Aquecimento · Trampolim individual · 17–21 · Masculino · Final
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 10:50–11:20.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim individual · 17–21 · Masculino · Final
+  – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-2-Competição-15-0-11:30@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261115T033000Z
+DTEND:20261115T040000Z
+SUMMARY:Competição · Trampolim individual · 17–21 · Masculino · Final
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 11:30–12:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim individual · 17–21 · Masculino · Final 
+ – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+END:VCALENDAR
