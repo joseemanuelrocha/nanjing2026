@@ -284,6 +284,22 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:competition-0-Aquecimento-12-1-18:00@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261112T092000Z
+DTEND:20261112T100000Z
+SUMMARY:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualificaç
+ ão · Grupo 3
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 17:20–18:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualif
+ icação · Grupo 3 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:competition-0-Competição-12-0-17:30@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261112T093000Z
@@ -316,18 +332,18 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-1-18:00@nanjing2026
+UID:competition-0-Competição-12-1-18:50@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261112T100000Z
-DTEND:20261112T104000Z
-SUMMARY:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualificaç
- ão · Grupo 3
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 18:00–18:40.
+DTSTART:20261112T101000Z
+DTEND:20261112T105000Z
+SUMMARY:Competição · Trampolim individual · 11–12 · Feminino · Qualificaçã
+ o · Grupo 3
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 18:10–18:50.
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Feminino · Qualif
- icação · Grupo 3 – daqui a 30 min
+DESCRIPTION:Competição · Trampolim individual · 11–12 · Feminino · Qualifi
+ cação · Grupo 3 – daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
@@ -344,22 +360,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim individual · 11–12 · Masculino · Qualif
  icação · Grupo 3 – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-0-Competição-12-1-18:50@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T105000Z
-DTEND:20261112T113000Z
-SUMMARY:Competição · Trampolim individual · 11–12 · Feminino · Qualificaçã
- o · Grupo 3
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 18:50–19:30.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Trampolim individual · 11–12 · Feminino · Qualifi
- cação · Grupo 3 – daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
@@ -652,12 +652,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Aquecimento-14-0-12:35@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T043500Z
-DTEND:20261114T052000Z
+DTSTART:20261114T055000Z
+DTEND:20261114T062000Z
 SUMMARY:Aquecimento · Trampolim sincronizado · 11–12 · Masculino · Qualifi
  cação · Grupo 1
 LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 12:35–13:20.
+DESCRIPTION:Hora de Nanjing: 13:50–14:20.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Aquecimento · Trampolim sincronizado · 11–12 · Masculino · Qua
@@ -668,12 +668,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Aquecimento-14-1-12:35@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T043500Z
-DTEND:20261114T052000Z
+DTSTART:20261114T055000Z
+DTEND:20261114T062000Z
 SUMMARY:Aquecimento · Trampolim sincronizado · 11–12 · Feminino · Qualific
  ação · Grupo 1
 LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 12:35–13:20.
+DESCRIPTION:Hora de Nanjing: 13:50–14:20.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Aquecimento · Trampolim sincronizado · 11–12 · Feminino · Qual
@@ -684,12 +684,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Competição-14-0-13:30@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T053000Z
-DTEND:20261114T060000Z
+DTSTART:20261114T063000Z
+DTEND:20261114T070000Z
 SUMMARY:Competição · Trampolim sincronizado · 11–12 · Masculino · Qualific
  ação · Grupo 1
 LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 13:30–14:00.
+DESCRIPTION:Hora de Nanjing: 14:30–15:00.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 11–12 · Masculino · Qual
@@ -700,12 +700,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Competição-14-1-13:30@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T053000Z
-DTEND:20261114T060000Z
+DTSTART:20261114T063000Z
+DTEND:20261114T070000Z
 SUMMARY:Competição · Trampolim sincronizado · 11–12 · Feminino · Qualifica
  ção · Grupo 1
 LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 13:30–14:00.
+DESCRIPTION:Hora de Nanjing: 14:30–15:00.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 11–12 · Feminino · Quali
@@ -716,12 +716,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Aquecimento-14-0-13:50@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T055000Z
-DTEND:20261114T062000Z
+DTSTART:20261114T065000Z
+DTEND:20261114T072000Z
 SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qualifi
  cação · Grupo 1
 LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 13:50–14:20.
+DESCRIPTION:Hora de Nanjing: 14:50–15:20.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qua
@@ -732,12 +732,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Aquecimento-14-1-13:50@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T055000Z
-DTEND:20261114T062000Z
+DTSTART:20261114T065000Z
+DTEND:20261114T072000Z
 SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Feminino · Qualific
  ação · Grupo 1
 LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 13:50–14:20.
+DESCRIPTION:Hora de Nanjing: 14:50–15:20.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Feminino · Qual
@@ -748,12 +748,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Competição-14-0-14:30@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T063000Z
-DTEND:20261114T070000Z
+DTSTART:20261114T073000Z
+DTEND:20261114T080000Z
 SUMMARY:Competição · Trampolim sincronizado · 17–21 · Masculino · Qualific
  ação · Grupo 1
 LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 14:30–15:00.
+DESCRIPTION:Hora de Nanjing: 15:30–16:00.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Masculino · Qual
@@ -764,12 +764,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Competição-14-1-14:30@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T063000Z
-DTEND:20261114T070000Z
+DTSTART:20261114T073000Z
+DTEND:20261114T080000Z
 SUMMARY:Competição · Trampolim sincronizado · 17–21 · Feminino · Qualifica
  ção · Grupo 1
 LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 14:30–15:00.
+DESCRIPTION:Hora de Nanjing: 15:30–16:00.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Feminino · Quali
@@ -780,12 +780,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Aquecimento-14-0-15:20@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T072000Z
-DTEND:20261114T075000Z
+DTSTART:20261114T082000Z
+DTEND:20261114T085000Z
 SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qualifi
  cação · Grupo 4
 LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 15:20–15:50.
+DESCRIPTION:Hora de Nanjing: 16:20–16:50.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qua
@@ -796,12 +796,12 @@ END:VEVENT
 BEGIN:VEVENT
 UID:competition-1-Competição-14-0-16:00@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T080000Z
-DTEND:20261114T083000Z
+DTSTART:20261114T090000Z
+DTEND:20261114T093000Z
 SUMMARY:Competição · Trampolim sincronizado · 17–21 · Masculino · Qualific
  ação · Grupo 4
 LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 16:00–16:30.
+DESCRIPTION:Hora de Nanjing: 17:00–17:30.
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Masculino · Qual
