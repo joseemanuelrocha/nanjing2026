@@ -586,6 +586,22 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:competition-1-Competição-13-0-14:40@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261113T074000Z
+DTEND:20261113T083000Z
+SUMMARY:Competição · Trampolim individual · Júnior · Masculino · Q1 · Grup
+ o 7
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 15:40–16:30.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim individual · Júnior · Masculino · Q1 · 
+ Grupo 7 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:competition-1-Aquecimento-13-1-16:00@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261113T090000Z
@@ -630,6 +646,22 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Masculino · Q1 
  · Grupo 2 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Competição-13-0-18:40@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261113T114000Z
+DTEND:20261113T123000Z
+SUMMARY:Competição · Trampolim sincronizado · Júnior · Masculino · Q1 · Gr
+ upo 3
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 19:40–20:30.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Masculino · Q1 
+ · Grupo 3 – daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
