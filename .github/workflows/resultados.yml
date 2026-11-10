@@ -1,0 +1,165 @@
+name: Resultados Sporttech
+# Lê os resultados oficiais (Sporttech) de 30 em 30 segundos durante as competições
+# e grava os dos portugueses em data/results.json, que a aplicação mostra em "Classificações".
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      teste:
+        description: 'Teste: fazer uma só leitura agora (mesmo fora do horário)'
+        type: boolean
+        default: true
+permissions:
+  contents: write
+concurrency:
+  group: resultados-sporttech
+  cancel-in-progress: false
+jobs:
+  resultados:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ler Sporttech e gravar resultados dos portugueses
+        env:
+          FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.teste && 'true' || 'false' }}
+          BUDGET: '1500'
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, time, gzip, subprocess, urllib.request, datetime as dt
+          EV = 'https://sporttech.io/events/01a1be6a-b476-781a-a380-de9079956fde/ovs/'
+          API = EV + 'api/'
+          OUT = 'data/results.json'
+          POLL = 30          # segundos entre leituras do Sporttech
+          MINGAP = 60        # intervalo mínimo entre gravações no GitHub
+          BUDGET = int(os.environ.get('BUDGET', '1500'))  # duração de cada execução (s)
+          FORCE = os.environ.get('FORCE') == 'true'
+          KIND = {0: 'Q', 6: 'Q2', 3: 'F', 8: 'F1', 7: 'F2'}
+          DISC = {0: 'TRA', 1: 'SYN', 2: 'DMT', 3: 'TUM'}
+
+          def get(url):
+              rq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Portugal delegation results relay)', 'Accept': 'application/json', 'Accept-Encoding': 'gzip'})
+              with urllib.request.urlopen(rq, timeout=25) as r:
+                  b = r.read()
+                  if r.headers.get('Content-Encoding') == 'gzip':
+                      b = gzip.decompress(b)
+                  return json.loads(b.decode('utf-8'))
+
+          def in_window(now):
+              if FORCE: return True
+              d = now.strftime('%Y-%m-%d')
+              if d < '2026-11-10' or d > '2026-11-15': return False
+              m = now.hour * 60 + now.minute       # UTC; Nanjing = UTC+8
+              return m >= 23 * 60 + 30 or m <= 15 * 60
+
+          def stage_rows(sid, s, comp, stage):
+              A = s.get('Athletes') or {}
+              P = s.get('Performances') or {}
+              F = s.get('Frames') or {}
+              G = [g for g in (stage.get('Groups') or [])]
+              lim = stage.get('PerfomanceFramesLimit') or 2
+              scored = [p for p in P.values() if p.get('Ranked') and (p.get('MarkTTT_G') or 0) > 0]
+              rows = []
+              for p in P.values():
+                  ath = [A.get(str(a)) or A.get(a) for a in p.get('Athletes') or []]
+                  ath = [a for a in ath if a]
+                  if not ath or not any(a.get('Representing') == 'POR' for a in ath):
+                      continue
+                  fr = []
+                  for fid in (p.get('Frames') or [])[:lim]:
+                      f = F.get(str(fid)) or F.get(fid)
+                      if not f: continue
+                      mk = f.get('MarkTTT_G') or 0
+                      if mk > 0 and f.get('State', 0) >= 3:
+                          fr.append(round(mk / 1000, 3))
+                  mk = p.get('MarkTTT_G') or 0
+                  rows.append({
+                      'st': sid, 'd': DISC.get(comp.get('Discipline')), 'ag': comp.get('AgeGroup'), 'sx': comp.get('SexCategory'), 'k': KIND.get(stage.get('Kind'), str(stage.get('Kind'))),
+                      'g': (G.index(p.get('GroupID')) + 1) if p.get('GroupID') in G else None,
+                      'ath': [{'gn': a.get('GivenName', ''), 'sn': a.get('Surname', '')} for a in ath],
+                      'mk': round(mk / 1000, 3) if mk > 0 else None,
+                      'rk': p.get('Rank_G') if mk > 0 and p.get('Ranked') else None,
+                      'n': len(scored),
+                      'q': p.get('Qualification_G') or '',
+                      'r': fr,
+                  })
+              return rows
+
+          def build(ev, cache):
+              comps = ev.get('Competitions') or {}
+              stages = ev.get('Stages') or {}
+              out = {'event': EV, 'stages': {}, 'por': []}
+              for cid, c in comps.items():
+                  if (c.get('Title') or '').lower() == 'test': continue
+                  for sid in c.get('Stages') or []:
+                      st = stages.get(str(sid)) or stages.get(sid)
+                      if not st: continue
+                      out['stages'][str(sid)] = {'d': DISC.get(c.get('Discipline')), 'ag': c.get('AgeGroup'), 'sx': c.get('SexCategory'), 'k': KIND.get(st.get('Kind'), str(st.get('Kind'))),
+                                                 'fin': st.get('FinishedFrames_G') or 0, 'tot': st.get('TotalFrames_G') or 0, 'live': bool(st.get('InProgress_G'))}
+                      det = cache.get(str(sid))
+                      if det:
+                          out['por'].extend(stage_rows(str(sid), det[1], c, st))
+              out['por'].sort(key=lambda r: (r['d'] or '', r['ag'] or '', r['sx'] or '', r['st']))
+              return out
+
+          def sh(*a):
+              return subprocess.run(a, capture_output=True, text=True)
+
+          def commit():
+              sh('git', 'add', OUT)
+              if sh('git', 'diff', '--cached', '--quiet').returncode == 0:
+                  return True
+              sh('git', 'commit', '-m', 'Resultados: atualização automática (Sporttech)')
+              for i in range(4):
+                  if sh('git', 'push').returncode == 0:
+                      return True
+                  sh('git', 'pull', '--rebase', '-X', 'theirs')
+                  time.sleep(3)
+              print('push falhou', file=sys.stderr)
+              return False
+
+          def main():
+              t0 = time.time()
+              if not in_window(dt.datetime.utcnow()):
+                  print('Fora do horário das competições.'); return
+              sh('git', 'config', 'user.name', 'Resultados Nanjing')
+              sh('git', 'config', 'user.email', 'actions@users.noreply.github.com')
+              cache, last, last_commit = {}, None, 0
+              try:
+                  last = json.load(open(OUT)); last.pop('updatedAt', None)
+              except Exception:
+                  last = None
+              while True:
+                  try:
+                      ev = get(API + 'event?fetch_event_competitions=true&fetch_competition_stages=true')
+                      for cid, c in (ev.get('Competitions') or {}).items():
+                          if (c.get('Title') or '').lower() == 'test': continue
+                          for sid in c.get('Stages') or []:
+                              st = (ev.get('Stages') or {}).get(str(sid)) or {}
+                              key = (st.get('LastEdit_G'), st.get('FinishedFrames_G'), st.get('InProgress_G'))
+                              old = cache.get(str(sid))
+                              if old and old[0] == key: continue
+                              try:
+                                  det = get(API + 'stages/%s?fetch_stage_groups=true&fetch_group_performances=true&fetch_performance_athletes=true&fetch_performance_frames=true' % sid)
+                                  cache[str(sid)] = (key, det)
+                              except Exception as e:
+                                  print('fase', sid, e, file=sys.stderr)
+                      out = build(ev, cache)
+                      if out != last and time.time() - last_commit >= MINGAP:
+                          out2 = dict(out); out2['updatedAt'] = dt.datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'
+                          os.makedirs('data', exist_ok=True)
+                          json.dump(out2, open(OUT, 'w'), ensure_ascii=False, separators=(',', ':'))
+                          if commit():
+                              last, last_commit = out, time.time()
+                              print('gravado', len(out['por']), 'linhas POR')
+                  except Exception as e:
+                      print('erro', e, file=sys.stderr)
+                  if FORCE or time.time() - t0 > BUDGET or not in_window(dt.datetime.utcnow()):
+                      break
+                  time.sleep(POLL)
+
+          if __name__ == '__main__':
+              main()
+
+          PY
