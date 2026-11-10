@@ -40,6 +40,14 @@ jobs:
           DISC = {0: 'TRA', 1: 'SYN', 2: 'DMT', 3: 'TUM'}
 
           def get(url):
+              for i in range(3):
+                  try:
+                      return get1(url)
+                  except Exception:
+                      if i == 2: raise
+                      time.sleep(2 + 3 * i)
+
+          def get1(url):
               rq = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (Portugal delegation results relay)', 'Accept': 'application/json', 'Accept-Encoding': 'gzip'})
               with urllib.request.urlopen(rq, timeout=25) as r:
                   b = r.read()
@@ -87,7 +95,10 @@ jobs:
                   })
               return rows
 
-          def build(ev, cache):
+          def build(ev, cache, prev=None):
+              prev = prev or {}
+              pst = prev.get('stages') or {}
+              ppor = prev.get('por') or []
               comps = ev.get('Competitions') or {}
               stages = ev.get('Stages') or {}
               out = {'event': EV, 'stages': {}, 'por': []}
@@ -99,10 +110,12 @@ jobs:
                       out['stages'][str(sid)] = {'d': DISC.get(c.get('Discipline')), 'ag': c.get('AgeGroup'), 'sx': c.get('SexCategory'), 'k': KIND.get(st.get('Kind'), str(st.get('Kind'))),
                                                  'fin': st.get('FinishedFrames_G') or 0, 'tot': st.get('TotalFrames_G') or 0, 'live': bool(st.get('InProgress_G'))}
                       det0 = cache.get(str(sid))
-                      out['stages'][str(sid)]['np'] = len((det0[1].get('Performances') or {})) if det0 else None
+                      out['stages'][str(sid)]['np'] = len((det0[1].get('Performances') or {})) if det0 else (pst.get(str(sid)) or {}).get('np')
                       det = cache.get(str(sid))
                       if det:
                           out['por'].extend(stage_rows(str(sid), det[1], c, st))
+                      else:   # Sporttech falhou nesta fase: manter o que já se sabia
+                          out['por'].extend([r for r in ppor if r.get('st') == str(sid)])
               out['por'].sort(key=lambda r: (r['d'] or '', r['ag'] or '', r['sx'] or '', r['st']))
               return out
 
@@ -230,9 +243,9 @@ jobs:
               sh('git', 'config', 'user.email', 'actions@users.noreply.github.com')
               cache, last, last_commit = {}, None, 0
               try:
-                  last = json.load(open(OUT)); last.pop('updatedAt', None)
+                  prev = json.load(open(OUT)); last = dict(prev); last.pop('updatedAt', None)
               except Exception:
-                  last = None
+                  prev, last = {}, None
               first = True
               while True:
                   try:
@@ -249,13 +262,13 @@ jobs:
                                   cache[str(sid)] = (key, det)
                               except Exception as e:
                                   print('fase', sid, e, file=sys.stderr)
-                      out = build(ev, cache)
+                      out = build(ev, cache, prev)
                       if out != last and time.time() - last_commit >= MINGAP:
                           out2 = dict(out); out2['updatedAt'] = dt.datetime.utcnow().replace(microsecond=0).isoformat() + 'Z'
                           os.makedirs('data', exist_ok=True)
                           json.dump(out2, open(OUT, 'w'), ensure_ascii=False, separators=(',', ':'))
                           if commit():
-                              last, last_commit = out, time.time()
+                              last, last_commit, prev = out, time.time(), out
                               print('gravado', len(out['por']), 'linhas POR')
                               update_state(out)
                               first = False
