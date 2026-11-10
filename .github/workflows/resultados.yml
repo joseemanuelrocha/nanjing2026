@@ -1,6 +1,7 @@
 name: Resultados Sporttech
 # Lê os resultados oficiais (Sporttech) de 30 em 30 segundos durante as competições
 # e grava os dos portugueses em data/results.json, que a aplicação mostra em "Classificações".
+# Quando sai a lista de partida da Q2 ou da final, põe os apurados (e os seus treinadores) nesses blocos da agenda.
 on:
   schedule:
     - cron: '*/5 * * * *'
@@ -97,6 +98,8 @@ jobs:
                       if not st: continue
                       out['stages'][str(sid)] = {'d': DISC.get(c.get('Discipline')), 'ag': c.get('AgeGroup'), 'sx': c.get('SexCategory'), 'k': KIND.get(st.get('Kind'), str(st.get('Kind'))),
                                                  'fin': st.get('FinishedFrames_G') or 0, 'tot': st.get('TotalFrames_G') or 0, 'live': bool(st.get('InProgress_G'))}
+                      det0 = cache.get(str(sid))
+                      out['stages'][str(sid)]['np'] = len((det0[1].get('Performances') or {})) if det0 else None
                       det = cache.get(str(sid))
                       if det:
                           out['por'].extend(stage_rows(str(sid), det[1], c, st))
@@ -119,6 +122,106 @@ jobs:
               print('push falhou', file=sys.stderr)
               return False
 
+          import re, unicodedata, uuid
+          STATE = 'data/state.json'
+
+          def toks(x):
+              x = unicodedata.normalize('NFD', str(x or '')).encode('ascii', 'ignore').decode().lower()
+              return [t for t in re.split('[^a-z]+', x) if t]
+
+          def same(name, a):
+              t = toks(name); g = toks(a.get('gn')); sn = toks(a.get('sn'))
+              return bool(g) and g[0] in t and any(x in t for x in sn)
+
+          def ekey(e):
+              ds = e.get('discipline') or ''
+              d = 'DMT' if 'Duplo' in ds else 'TUM' if 'Tumbling' in ds else 'SYN' if re.search('sincronizado|misto', ds, re.I) else 'TRA' if 'Trampolim' in ds else None
+              ag = str(e.get('age') or '').replace('–', '-')
+              A = {'11-12': 'AG1', '13-14': 'AG2', '17-21': 'AG3'}.get(ag, 'JUN' if ag.startswith('J') else None)
+              sx = 'mix' if ('misto' in ds.lower() or e.get('gender') == 'X') else {'F': 'female', 'M': 'male'}.get(e.get('gender'))
+              return d, A, sx
+
+          def nanjing_hm():
+              return (dt.datetime.utcnow() + dt.timedelta(hours=8)).strftime('%H:%M')
+
+          def apply_qual(doc, res):
+              S = doc['state']; ev = S.get('events') or []; roster = S.get('roster') or []
+              changed = []
+              for e in ev:
+                  if e.get('type') not in ('Aquecimento', 'Competição') or e.get('phase') not in ('Final', 'Q2'): continue
+                  d, A, sx = ekey(e)
+                  if not d or not A or not sx: continue
+                  kinds = ['F', 'F1'] if e.get('phase') == 'Final' else ['Q2']
+                  sid = next((k for k, v in res['stages'].items() if v['d'] == d and v['ag'] == A and v['sx'] == sx and v['k'] in kinds and (v.get('np') or 0) > 0), None)
+                  if not sid: continue
+                  pre = [v for v in res['stages'].values() if v['d'] == d and v['ag'] == A and v['sx'] == sx and v['k'] in (['Q2'] if e.get('phase') == 'Final' else []) + ['Q']]
+                  pre = [v for v in pre if v['k'] == 'Q2'] or pre
+                  if not pre or any(v.get('live') or not v.get('tot') or (v.get('fin') or 0) < v.get('tot') for v in pre): continue   # qualificação ainda não terminou
+                  rows = [r for r in res['por'] if r['st'] == sid]
+                  try: g = int(e.get('group') or 0)
+                  except Exception: g = 0
+                  if g: rows = [r for r in rows if r.get('g') == g]
+                  ids = []
+                  for r in rows:
+                      for a in r['ath']:
+                          for p in roster:
+                              if p.get('id') not in ids and same(p.get('name'), a): ids.append(p.get('id'))
+                  prev = e.get('autoQual')
+                  if prev:
+                      if sorted(e.get('athletes') or []) != sorted(prev.get('ids') or []): continue   # alterado à mão
+                      if sorted(prev.get('ids') or []) == sorted(ids): continue
+                  elif not e.get('candidate'):
+                      continue                                                                       # já confirmado à mão
+                  co, app = [], None   # treinadores dos blocos de qualificação de cada apurado
+                  for q in ev:
+                      if q is e or q.get('type') != 'Competição' or q.get('phase') not in ('Qualificação', 'Q1', 'Q2'): continue
+                      if ekey(q) != (d, A, sx) or q.get('phase') == e.get('phase'): continue
+                      if not set(q.get('athletes') or []) & set(ids): continue
+                      if isinstance(q.get('coachIds'), list):
+                          for c in q['coachIds']:
+                              if c not in co: co.append(c)
+                          app = app or q.get('coachApparatus')
+                  e['athletes'] = ids
+                  if co:
+                      e['coachIds'] = co
+                      if app: e['coachApparatus'] = app
+                  elif not ids:
+                      e['coachIds'] = []
+                  e['candidate'] = False
+                  e['participantsConfirmed'] = True
+                  tag = ('Apurados segundo o Sporttech (' + nanjing_hm() + ', hora de Nanjing).') if ids else ('Sem portugueses apurados (Sporttech, ' + nanjing_hm() + ').')
+                  notes = re.sub(r'^(Apurados segundo o Sporttech|Sem portugueses apurados)[^\n]*\n?', '', e.get('notes') or '')
+                  e['notes'] = tag + ('\n' + notes if notes else '')
+                  e['autoQual'] = {'ids': ids, 'at': dt.datetime.utcnow().replace(microsecond=0).isoformat() + 'Z', 'stage': sid}
+                  changed.append((e, [p.get('name') for p in roster if p.get('id') in ids]))
+              seen = set()
+              for e, nm in changed:
+                  if e.get('type') != 'Competição' or e['title'] in seen: continue
+                  seen.add(e['title'])
+                  S.setdefault('logs', []).insert(0, {'id': str(uuid.uuid4()), 'time': dt.datetime.utcnow().isoformat(timespec='milliseconds') + 'Z',
+                      'text': e['title'] + ': ' + ('apurados ' + ', '.join(nm) if nm else 'sem portugueses apurados') + ' (automático, Sporttech) · por Resultados'})
+              return len(changed)
+
+          def update_state(res):
+              for i in range(5):
+                  sh('git', 'fetch', '-q', 'origin')
+                  sh('git', 'reset', '-q', '--hard', 'origin/main')
+                  try:
+                      doc = json.load(open(STATE, encoding='utf-8'))
+                  except Exception as e:
+                      print('state.json ilegível', e, file=sys.stderr); return
+                  n = apply_qual(doc, res)
+                  if not n: return
+                  doc['updatedAt'] = dt.datetime.utcnow().isoformat(timespec='milliseconds') + 'Z'; doc['by'] = 'Resultados (automático)'
+                  json.dump(doc, open(STATE, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+                  sh('git', 'add', STATE)
+                  sh('git', 'commit', '-q', '-m', 'Apurados: atualização automática (Sporttech)')
+                  if sh('git', 'push', '-q').returncode == 0:
+                      print('apurados aplicados em', n, 'blocos'); return
+                  time.sleep(4)
+              print('não foi possível gravar os apurados', file=sys.stderr)
+
+
           def main():
               t0 = time.time()
               if not in_window(dt.datetime.utcnow()):
@@ -130,6 +233,7 @@ jobs:
                   last = json.load(open(OUT)); last.pop('updatedAt', None)
               except Exception:
                   last = None
+              first = True
               while True:
                   try:
                       ev = get(API + 'event?fetch_event_competitions=true&fetch_competition_stages=true')
@@ -153,6 +257,10 @@ jobs:
                           if commit():
                               last, last_commit = out, time.time()
                               print('gravado', len(out['por']), 'linhas POR')
+                              update_state(out)
+                              first = False
+                      if first:
+                          update_state(out); first = False
                   except Exception as e:
                       print('erro', e, file=sys.stderr)
                   if FORCE or time.time() - t0 > BUDGET or not in_window(dt.datetime.utcnow()):
