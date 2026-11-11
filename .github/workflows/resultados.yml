@@ -63,6 +63,22 @@ jobs:
               m = now.hour * 60 + now.minute       # UTC; Nanjing = UTC+8
               return m >= 23 * 60 + 30 or m <= 15 * 60
 
+          def frame_detail(f):
+              # itens da nota de uma rotina, em pontos (as unidades do Sporttech variam por aparelho)
+              T = (f.get('MarkTTT_G') or 0) / 1000.0
+              E, D, H, X = f.get('ETotalT_G') or 0, f.get('DifficultyT_G') or 0, f.get('Displacement_G') or 0, f.get('TimeTMS_G') or 0
+              P, B = (f.get('PenaltyT') or 0) / 10.0, (f.get('BonusT') or 0) / 10.0
+              o = {'t': round(T, 3), 'd': round(D / 10.0, 3), 'p': round(P, 3)}
+              if B: o['b'] = round(B, 3)
+              for e in (E / 10.0, E / 1000.0, E / 100.0):
+                  for h in (H / 100.0, H / 10.0, H / 1000.0):
+                      for x in (X / 1000.0, X * 2 / 100.0, X / 100.0, X / 10.0):
+                          if abs(e + D / 10.0 + h + x + B - P - T) < 0.006:
+                              o['e'] = round(e, 3)
+                              if H or X: o['h'] = round(h, 3); o['x'] = round(x, 3)
+                              return o
+              return o
+
           def stage_rows(sid, s, comp, stage):
               A = s.get('Athletes') or {}
               P = s.get('Performances') or {}
@@ -77,12 +93,14 @@ jobs:
                   if not ath or not any(a.get('Representing') == 'POR' for a in ath):
                       continue
                   fr = []
+                  det = []
                   for fid in (p.get('Frames') or [])[:lim]:
                       f = F.get(str(fid)) or F.get(fid)
                       if not f: continue
                       mk = f.get('MarkTTT_G') or 0
                       if mk > 0 and f.get('State', 0) >= 3:
                           fr.append(round(mk / 1000, 3))
+                          det.append(frame_detail(f))
                   mk = p.get('MarkTTT_G') or 0
                   rows.append({
                       'st': sid, 'd': DISC.get(comp.get('Discipline')), 'ag': comp.get('AgeGroup'), 'sx': comp.get('SexCategory'), 'k': KIND.get(stage.get('Kind'), str(stage.get('Kind'))),
@@ -93,6 +111,7 @@ jobs:
                       'n': len(scored),
                       'q': p.get('Qualification_G') or '',
                       'r': fr,
+                      'fr': det,
                   })
               return rows
 
