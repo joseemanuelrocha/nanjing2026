@@ -13,19 +13,20 @@ on:
         default: true
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: resultados-sporttech
   cancel-in-progress: false
 jobs:
   resultados:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
       - name: Ler Sporttech e gravar resultados dos portugueses
         env:
           FORCE: ${{ github.event_name == 'workflow_dispatch' && inputs.teste && 'true' || 'false' }}
-          BUDGET: '1500'
+          BUDGET: '20400'
         run: |
           python3 - <<'PY'
           import json, os, sys, time, gzip, subprocess, urllib.request, datetime as dt
@@ -237,8 +238,10 @@ jobs:
 
           def main():
               t0 = time.time()
-              if not in_window(dt.datetime.utcnow()):
-                  print('Fora do horário das competições.'); return
+              while not in_window(dt.datetime.utcnow()):
+                  if time.time() - t0 > BUDGET or dt.datetime.utcnow() > dt.datetime(2026, 11, 15, 15, 30):
+                      print('Fora do horário das competições.'); return
+                  time.sleep(60)
               sh('git', 'config', 'user.name', 'Resultados Nanjing')
               sh('git', 'config', 'user.email', 'actions@users.noreply.github.com')
               cache, last, last_commit = {}, None, 0
@@ -284,3 +287,11 @@ jobs:
               main()
 
           PY
+      - name: Encadear a execução seguinte (o horário do GitHub é irregular)
+        if: ${{ always() && !(github.event_name == 'workflow_dispatch' && inputs.teste) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ "$(date -u +%Y%m%d%H%M)" -le 202611151530 ]; then
+            gh workflow run resultados.yml --repo "$GITHUB_REPOSITORY" --ref main -f teste=false || true
+          fi
