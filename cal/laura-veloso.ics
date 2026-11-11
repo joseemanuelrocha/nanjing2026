@@ -167,22 +167,6 @@ TRIGGER:-PT25M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:transport-plan-2026-12-Ida-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T063000Z
-DTEND:20261112T064500Z
-SUMMARY:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (provisó
- rio)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 14:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (pro
- visório) – encontro às 14:20\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:training-12-6-Tumbling@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261112T104500Z
@@ -194,21 +178,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Treino · Tumbling · treino do grupo 6 – daqui a 30 min
 TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-12-Regresso-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T154000Z
-DTEND:20261112T155500Z
-SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
-LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 23:30 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 23:30\, daqui a 15 min
-TRIGGER:-PT25M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
