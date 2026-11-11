@@ -351,22 +351,6 @@ TRIGGER:-PT-75M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:transport-plan-2026-13-Ida-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T033000Z
-DTEND:20261113T034500Z
-SUMMARY:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (provisó
- rio)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 11:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (pro
- visório) – encontro às 11:20\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:training-13-2-Trampolim@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261113T044500Z
@@ -381,34 +365,18 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:transport-plan-2026-13-Regresso-3@nanjing2026
+UID:transport-plan-2026-13-Regresso-1@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261113T131000Z
-DTEND:20261113T132500Z
-SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
+DTSTART:20261113T090000Z
+DTEND:20261113T091500Z
+SUMMARY:Autocarro único · Regresso 1/3
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:00 (hora de Nanjing).
+DESCRIPTION:Encontro às 19:40 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 21:00\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-14-Ida-1@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T225000Z
-DTEND:20261113T230500Z
-SUMMARY:Autocarro único · Ida 1/3 · 17 ginastas + 10 acompanhantes (provis
- ório)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 06:40 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 1/3 · 17 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 06:40\, daqui a 15 min
-TRIGGER:-PT25M
+DESCRIPTION:Autocarro único · Regresso 1/3 – encontro às 19:40\, daqui a 1
+ 5 min
+TRIGGER:-PT-145M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -471,21 +439,6 @@ ACTION:DISPLAY
 DESCRIPTION:Competição · Trampolim sincronizado · 13–14 · Masculino · Fina
  l – daqui a 30 min
 TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-14-Regresso-1@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261114T135000Z
-DTEND:20261114T140500Z
-SUMMARY:Autocarro único · Regresso 1/3 · grupo da ida 1
-LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:40 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 1/3 · grupo da ida 1 – encontro às 
- 21:40\, daqui a 15 min
-TRIGGER:-PT25M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

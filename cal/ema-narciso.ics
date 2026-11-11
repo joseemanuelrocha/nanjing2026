@@ -286,22 +286,6 @@ TRIGGER:-PT-75M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:transport-plan-2026-13-Ida-2@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T030000Z
-DTEND:20261113T031500Z
-SUMMARY:Autocarro único · Ida 2/3 · 17 ginastas + 10 acompanhantes (provis
- ório)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 10:50 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 2/3 · 17 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 10:50\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:competition-1-Aquecimento-13-2-14:30@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261113T073000Z
@@ -329,37 +313,6 @@ ACTION:DISPLAY
 DESCRIPTION:Competição · Tumbling · Júnior · Feminino · Q1 · Grupo 4 – daq
  ui a 30 min
 TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-13-Regresso-2@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T123000Z
-DTEND:20261113T124500Z
-SUMMARY:Autocarro único · Regresso 2/3 · grupo da ida 2
-LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 20:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 2/3 · grupo da ida 2 – encontro às 
- 20:20\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-14-Ida-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261114T033000Z
-DTEND:20261114T034500Z
-SUMMARY:Autocarro único · Ida 3/3 · 14 ginastas + 9 acompanhantes (provisó
- rio)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 11:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 3/3 · 14 ginastas + 9 acompanhantes (pro
- visório) – encontro às 11:20\, daqui a 15 min
-TRIGGER:-PT25M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -439,8 +392,8 @@ END:VEVENT
 BEGIN:VEVENT
 UID:transport-plan-2026-14-Regresso-3@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T151000Z
-DTEND:20261114T152500Z
+DTSTART:20261114T134500Z
+DTEND:20261114T140000Z
 SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
 LOCATION:Pavilhão → Alojamento
 DESCRIPTION:Encontro às 23:00 (hora de Nanjing).
@@ -448,7 +401,7 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
  23:00\, daqui a 15 min
-TRIGGER:-PT25M
+TRIGGER:-PT-60M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

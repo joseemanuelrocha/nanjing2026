@@ -317,57 +317,10 @@ TRIGGER:-PT-75M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:transport-plan-2026-13-Ida-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T033000Z
-DTEND:20261113T034500Z
-SUMMARY:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (provisó
- rio)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 11:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 3/3 · 45 ginastas + 9 acompanhantes (pro
- visório) – encontro às 11:20\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-13-Regresso-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261113T131000Z
-DTEND:20261113T132500Z
-SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
-LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:00 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 21:00\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-14-Ida-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261114T033000Z
-DTEND:20261114T034500Z
-SUMMARY:Autocarro único · Ida 3/3 · 14 ginastas + 9 acompanhantes (provisó
- rio)
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 11:20 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Ida 3/3 · 14 ginastas + 9 acompanhantes (pro
- visório) – encontro às 11:20\, daqui a 15 min
-TRIGGER:-PT25M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:transport-plan-2026-14-Regresso-3@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261114T151000Z
-DTEND:20261114T152500Z
+DTSTART:20261114T134500Z
+DTEND:20261114T140000Z
 SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
 LOCATION:Pavilhão → Alojamento
 DESCRIPTION:Encontro às 23:00 (hora de Nanjing).
@@ -375,7 +328,7 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
  23:00\, daqui a 15 min
-TRIGGER:-PT25M
+TRIGGER:-PT-60M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
