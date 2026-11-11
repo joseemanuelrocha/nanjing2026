@@ -14,12 +14,12 @@ DTSTART:20261109T000000Z
 DTEND:20261109T001500Z
 SUMMARY:Autocarro · Ida 1/3 (13–14 anos)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 07:50 (hora de Nanjing).
+DESCRIPTION:Encontro às 07:45 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Autocarro · Ida 1/3 (13–14 anos) – encontro às 07:50\, daqui a
+DESCRIPTION:Autocarro · Ida 1/3 (13–14 anos) – encontro às 07:45\, daqui a
   15 min
-TRIGGER:-PT25M
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -59,12 +59,12 @@ DTSTART:20261109T083000Z
 DTEND:20261109T084500Z
 SUMMARY:Autocarro · Regresso 1/3 (13–14 anos)
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 16:20 (hora de Nanjing).
+DESCRIPTION:Encontro às 16:15 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Autocarro · Regresso 1/3 (13–14 anos) – encontro às 16:20\, da
+DESCRIPTION:Autocarro · Regresso 1/3 (13–14 anos) – encontro às 16:15\, da
  qui a 15 min
-TRIGGER:-PT25M
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -89,12 +89,12 @@ DTEND:20261110T004500Z
 SUMMARY:Autocarro único · Ida 2/3 · 45 ginastas + 10 acompanhantes (provis
  ório)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 08:20 (hora de Nanjing).
+DESCRIPTION:Encontro às 08:15 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Ida 2/3 · 45 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 08:20\, daqui a 15 min
-TRIGGER:-PT25M
+ ovisório) – encontro às 08:15\, daqui a 15 min
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -119,12 +119,12 @@ DTSTART:20261110T101500Z
 DTEND:20261110T103000Z
 SUMMARY:Autocarro único · Regresso 2/3 · grupo da ida 2
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:05 (hora de Nanjing).
+DESCRIPTION:Encontro às 18:00 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 2/3 · grupo da ida 2 – encontro às 
- 21:05\, daqui a 15 min
-TRIGGER:-PT-155M
+ 18:00\, daqui a 15 min
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -134,12 +134,12 @@ DTSTART:20261110T124500Z
 DTEND:20261110T130000Z
 SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:45 (hora de Nanjing).
+DESCRIPTION:Encontro às 20:30 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 21:45\, daqui a 15 min
-TRIGGER:-PT-45M
+ 20:30\, daqui a 15 min
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

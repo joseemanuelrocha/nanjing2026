@@ -14,12 +14,12 @@ DTSTART:20261109T010000Z
 DTEND:20261109T011500Z
 SUMMARY:Autocarro · Ida 3/3 (11–12 anos)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 08:50 (hora de Nanjing).
+DESCRIPTION:Encontro às 08:45 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Autocarro · Ida 3/3 (11–12 anos) – encontro às 08:50\, daqui a
+DESCRIPTION:Autocarro · Ida 3/3 (11–12 anos) – encontro às 08:45\, daqui a
   15 min
-TRIGGER:-PT25M
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
@@ -29,12 +29,12 @@ DTSTART:20261109T093000Z
 DTEND:20261109T094500Z
 SUMMARY:Autocarro · Regresso 3/3 (11–12 anos)
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 17:20 (hora de Nanjing).
+DESCRIPTION:Encontro às 17:15 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
-DESCRIPTION:Autocarro · Regresso 3/3 (11–12 anos) – encontro às 17:20\, da
+DESCRIPTION:Autocarro · Regresso 3/3 (11–12 anos) – encontro às 17:15\, da
  qui a 15 min
-TRIGGER:-PT25M
+TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
