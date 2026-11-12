@@ -242,6 +242,22 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:transport-plan-2026-13-Ida-2@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261113T003500Z
+DTEND:20261113T005000Z
+SUMMARY:Autocarro único · Ida 2/3 · 17 ginastas + 10 acompanhantes (provis
+ ório)
+LOCATION:Alojamento → Pavilhão
+DESCRIPTION:Encontro às 08:20 (hora de Nanjing).
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Autocarro único · Ida 2/3 · 17 ginastas + 10 acompanhantes (pr
+ ovisório) – encontro às 08:20\, daqui a 15 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:transport-plan-2026-13-Ida-3@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261113T012500Z
