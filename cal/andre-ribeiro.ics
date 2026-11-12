@@ -415,36 +415,6 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-0-20:20@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T122000Z
-DTEND:20261112T125000Z
-SUMMARY:Aquecimento · Trampolim individual · 11–12 · Masculino · Final
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 20:20–20:50.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Masculino · Final
-  – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-0-Competição-12-0-21:00@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T130000Z
-DTEND:20261112T133000Z
-SUMMARY:Competição · Trampolim individual · 11–12 · Masculino · Final
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 21:00–21:30.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Trampolim individual · 11–12 · Masculino · Final 
- – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:training-13-2-Trampolim@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261113T044500Z
@@ -563,36 +533,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Ida 3/3 · 38 ginastas + 9 acompanhantes (pro
  visório) – encontro às 09:20\, daqui a 15 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-2-Aquecimento-15-3-10:50@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261115T025000Z
-DTEND:20261115T032000Z
-SUMMARY:Aquecimento · Duplo minitrampolim · 11–12 · Masculino · Final
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 10:50–11:20.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Duplo minitrampolim · 11–12 · Masculino · Final 
- – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-2-Competição-15-3-11:30@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261115T033000Z
-DTEND:20261115T040000Z
-SUMMARY:Competição · Duplo minitrampolim · 11–12 · Masculino · Final
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 11:30–12:00.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Duplo minitrampolim · 11–12 · Masculino · Final –
-  daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT

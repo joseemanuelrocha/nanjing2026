@@ -292,47 +292,17 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-1-19:50@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T115000Z
-DTEND:20261112T122000Z
-SUMMARY:Aquecimento · Trampolim individual · 11–12 · Feminino · Final
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 19:50–20:20.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Trampolim individual · 11–12 · Feminino · Final 
- – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-0-Competição-12-1-20:30@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T123000Z
-DTEND:20261112T130000Z
-SUMMARY:Competição · Trampolim individual · 11–12 · Feminino · Final
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 20:30–21:00.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Trampolim individual · 11–12 · Feminino · Final –
-  daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:transport-plan-2026-12-Regresso-3@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261112T140000Z
-DTEND:20261112T141500Z
+DTSTART:20261112T143000Z
+DTEND:20261112T144500Z
 SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 21:45 (hora de Nanjing).
+DESCRIPTION:Encontro às 22:15 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 21:45\, daqui a 15 min
+ 22:15\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT

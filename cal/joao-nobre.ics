@@ -280,21 +280,6 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-0-Aquecimento-12-3-20:20@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T122000Z
-DTEND:20261112T125000Z
-SUMMARY:Aquecimento · Duplo minitrampolim · 13–14 · Masculino · Final
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 20:20–20:50.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Duplo minitrampolim · 13–14 · Masculino · Final 
- – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:transport-plan-2026-12-Regresso-2@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261112T123000Z
@@ -306,21 +291,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 2/3 · grupo da ida 2 – encontro às 
  20:15\, daqui a 15 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-0-Competição-12-3-21:00@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261112T130000Z
-DTEND:20261112T133000Z
-SUMMARY:Competição · Duplo minitrampolim · 13–14 · Masculino · Final
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 21:00–21:30.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Duplo minitrampolim · 13–14 · Masculino · Final –
-  daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
