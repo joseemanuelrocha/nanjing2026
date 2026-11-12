@@ -114,16 +114,31 @@ END:VEVENT
 BEGIN:VEVENT
 UID:transport-plan-2026-10-Ida-2@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261110T003000Z
-DTEND:20261110T004500Z
+DTSTART:20261109T233000Z
+DTEND:20261109T234500Z
 SUMMARY:Autocarro único · Ida 2/3 · 45 ginastas + 10 acompanhantes (provis
  ório)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 08:15 (hora de Nanjing).
+DESCRIPTION:Encontro às 07:15 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Ida 2/3 · 45 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 08:15\, daqui a 15 min
+ ovisório) – encontro às 07:15\, daqui a 15 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:shuttle-2026-11-10-1400-ida@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261110T000000Z
+DTEND:20261110T001500Z
+SUMMARY:Autocarro · Ida da tarde · 11–12\, 13–14 e Juniores
+LOCATION:Alojamento → Pavilhão
+DESCRIPTION:Encontro às 07:45 (hora de Nanjing).
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Autocarro · Ida da tarde · 11–12\, 13–14 e Juniores – encontro
+  às 07:45\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
@@ -153,21 +168,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Treino · Duplo minitrampolim · treino do grupo 2 – daqui a 30 
  min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:shuttle-2026-11-10-1400-ida@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261110T060000Z
-DTEND:20261110T061500Z
-SUMMARY:Autocarro · Ida da tarde · 11–12\, 13–14 e Juniores
-LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 13:45 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro · Ida da tarde · 11–12\, 13–14 e Juniores – encontro
-  às 13:45\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
@@ -247,16 +247,16 @@ END:VEVENT
 BEGIN:VEVENT
 UID:transport-plan-2026-11-Ida-2@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261111T083500Z
-DTEND:20261111T085000Z
+DTSTART:20261111T011500Z
+DTEND:20261111T013000Z
 SUMMARY:Autocarro único · Ida 2/3 · 13 ginastas + 10 acompanhantes (provis
  ório)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 16:20 (hora de Nanjing).
+DESCRIPTION:Encontro às 09:00 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Ida 2/3 · 13 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 16:20\, daqui a 15 min
+ ovisório) – encontro às 09:00\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
