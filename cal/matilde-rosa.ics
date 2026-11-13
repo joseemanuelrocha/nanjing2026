@@ -505,16 +505,16 @@ END:VEVENT
 BEGIN:VEVENT
 UID:transport-plan-2026-14-Ida-1@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261113T225000Z
-DTEND:20261113T230500Z
+DTSTART:20261113T230500Z
+DTEND:20261113T232000Z
 SUMMARY:Autocarro único · Ida 1/3 · 17 ginastas + 10 acompanhantes (provis
  ório)
 LOCATION:Alojamento → Pavilhão
-DESCRIPTION:Encontro às 06:35 (hora de Nanjing).
+DESCRIPTION:Encontro às 06:50 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Ida 1/3 · 17 ginastas + 10 acompanhantes (pr
- ovisório) – encontro às 06:35\, daqui a 15 min
+ ovisório) – encontro às 06:50\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT

@@ -567,38 +567,6 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:competition-1-Aquecimento-14-3-16:20@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261114T055000Z
-DTEND:20261114T062000Z
-SUMMARY:Aquecimento · Duplo minitrampolim · Júnior · Feminino · Q2 · Grupo
-  1
-LOCATION:Warm-up Hall
-DESCRIPTION:Hora de Nanjing: 13:50–14:20.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Aquecimento · Duplo minitrampolim · Júnior · Feminino · Q2 · G
- rupo 1 – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:competition-1-Competição-14-3-17:00@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261114T063000Z
-DTEND:20261114T070000Z
-SUMMARY:Competição · Duplo minitrampolim · Júnior · Feminino · Q2 · Grupo 
- 1
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 14:30–15:00.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Duplo minitrampolim · Júnior · Feminino · Q2 · Gr
- upo 1 – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:training-15-2-Duplo minitrampolim@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261115T010000Z
