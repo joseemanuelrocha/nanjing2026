@@ -760,6 +760,100 @@ TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:competition-1-Aquecimento-14-0-15:20@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T082000Z
+DTEND:20261114T085000Z
+SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qualifi
+ cação · Grupo 4
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 16:20–16:50.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Qua
+ lificação · Grupo 4 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Competição-14-0-16:00@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T090000Z
+DTEND:20261114T093000Z
+SUMMARY:Competição · Trampolim sincronizado · 17–21 · Masculino · Qualific
+ ação · Grupo 4
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 17:00–17:30.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Masculino · Qual
+ ificação · Grupo 4 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Aquecimento-14-0-15:50@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T092000Z
+DTEND:20261114T095000Z
+SUMMARY:Aquecimento · Trampolim sincronizado · Júnior · Masculino · Q2 · G
+ rupo 1
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 17:20–17:50.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim sincronizado · Júnior · Masculino · Q2
+  · Grupo 1 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Competição-14-0-16:30@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T100000Z
+DTEND:20261114T103000Z
+SUMMARY:Competição · Trampolim sincronizado · Júnior · Masculino · Q2 · Gr
+ upo 1
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 18:00–18:30.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Masculino · Q2 
+ · Grupo 1 – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Aquecimento-14-0-19:25@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T112500Z
+DTEND:20261114T120000Z
+SUMMARY:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Final
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 19:25–20:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim sincronizado · 17–21 · Masculino · Fin
+ al – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-1-Competição-14-0-20:10@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261114T121000Z
+DTEND:20261114T124500Z
+SUMMARY:Competição · Trampolim sincronizado · 17–21 · Masculino · Final
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 20:10–20:45.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · 17–21 · Masculino · Fina
+ l – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:training-15-2-Trampolim@nanjing2026
 DTSTAMP:20261109T000000Z
 DTSTART:20261115T010000Z
@@ -771,6 +865,36 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Treino · Trampolim · treino livre condicionado – daqui a 30 mi
  n
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-2-Aquecimento-15-0-14:50@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261115T065000Z
+DTEND:20261115T072000Z
+SUMMARY:Aquecimento · Trampolim sincronizado · Júnior · Masculino · Final
+LOCATION:Warm-up Hall
+DESCRIPTION:Hora de Nanjing: 14:50–15:20.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Aquecimento · Trampolim sincronizado · Júnior · Masculino · Fi
+ nal – daqui a 30 min
+TRIGGER:-PT30M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:competition-2-Competição-15-0-15:30@nanjing2026
+DTSTAMP:20261109T000000Z
+DTSTART:20261115T073000Z
+DTEND:20261115T080000Z
+SUMMARY:Competição · Trampolim sincronizado · Júnior · Masculino · Final
+LOCATION:Competition Hall
+DESCRIPTION:Hora de Nanjing: 15:30–16:00.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Masculino · Fin
+ al – daqui a 30 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
