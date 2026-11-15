@@ -248,19 +248,4 @@ DESCRIPTION:Autocarro único · Ida 3/3 · 38 ginastas + 9 acompanhantes (pro
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
-BEGIN:VEVENT
-UID:transport-plan-2026-15-Regresso-3@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261115T124000Z
-DTEND:20261115T125500Z
-SUMMARY:Autocarro único · Regresso 3/3 · grupo da ida 3
-LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 20:25 (hora de Nanjing).
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Autocarro único · Regresso 3/3 · grupo da ida 3 – encontro às 
- 20:25\, daqui a 15 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
 END:VCALENDAR

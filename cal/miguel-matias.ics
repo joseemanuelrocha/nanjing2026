@@ -336,15 +336,15 @@ END:VEVENT
 BEGIN:VEVENT
 UID:transport-plan-2026-15-Regresso-2@nanjing2026
 DTSTAMP:20261109T000000Z
-DTSTART:20261115T120000Z
-DTEND:20261115T121500Z
+DTSTART:20261115T100000Z
+DTEND:20261115T101500Z
 SUMMARY:Autocarro único · Regresso 2/3 · grupo da ida 2
 LOCATION:Pavilhão → Alojamento
-DESCRIPTION:Encontro às 19:45 (hora de Nanjing).
+DESCRIPTION:Encontro às 17:45 (hora de Nanjing).
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Autocarro único · Regresso 2/3 · grupo da ida 2 – encontro às 
- 19:45\, daqui a 15 min
+ 17:45\, daqui a 15 min
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
