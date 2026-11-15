@@ -912,19 +912,4 @@ DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Feminino · Fin
 TRIGGER:-PT30M
 END:VALARM
 END:VEVENT
-BEGIN:VEVENT
-UID:competition-2-Competição-15-0-15:30@nanjing2026
-DTSTAMP:20261109T000000Z
-DTSTART:20261115T073000Z
-DTEND:20261115T080000Z
-SUMMARY:Competição · Trampolim sincronizado · Júnior · Masculino · Final
-LOCATION:Competition Hall
-DESCRIPTION:Hora de Nanjing: 15:30–16:00.
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:Competição · Trampolim sincronizado · Júnior · Masculino · Fin
- al – daqui a 30 min
-TRIGGER:-PT30M
-END:VALARM
-END:VEVENT
 END:VCALENDAR
